@@ -110,7 +110,6 @@ router.route('/email/listAll').get(hasPermission('read'), catchErrors(emailContr
 router.route('/email/filter').get(hasPermission('read'), catchErrors(emailController.filter));
 
 // //____________________________________________ API for Upload controller _________________
-
 router.route('/upload/multiple/:model/:fieldId').post(
   hasPermission('upload'),
   uploadMultipleToStorage.array('upload', 100),
